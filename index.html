@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -24,7 +25,7 @@
         <a href="#gallery">Работы</a>
         <a href="#about">О нас</a>
         <a href="#contacts">Контакты</a>
-        <a class="btn btn--small" href="#contacts">Записаться</a>
+        <a class="btn btn--small" href="#booking">Записаться</a>
       </nav>
     </div>
   </header>
@@ -39,7 +40,7 @@
           <h1>Barber Studio</h1>
           <p class="hero__sub">Точная стрижка, горячее полотенце и бритьё опасной бритвой. Без очередей — только по записи.</p>
           <div class="hero__actions">
-            <a class="btn" href="#contacts">Записаться на стрижку</a>
+            <a class="btn" href="#booking">Записаться на стрижку</a>
             <a class="btn btn--ghost" href="#services">Смотреть цены</a>
           </div>
         </div>
@@ -120,6 +121,106 @@
           <div class="fact"><dt>12 000</dt><dd>выполненных стрижек</dd></div>
           <div class="fact"><dt>4,9</dt><dd>средняя оценка гостей</dd></div>
         </dl>
+      </div>
+    </section>
+
+    <!-- Онлайн-запись -->
+    <section class="section section--booking" id="booking">
+      <div class="container booking">
+        <div class="booking__intro">
+          <h2 class="section__title">Онлайн-запись</h2>
+          <p class="section__text">Выберите услугу, мастера и удобное время. Мы подтвердим запись по телефону в течение часа.</p>
+          <ul class="booking__perks">
+            <li>Без предоплаты</li>
+            <li>Бесплатная отмена за 3 часа до визита</li>
+            <li>Напомним о записи звонком</li>
+          </ul>
+        </div>
+
+        <div class="booking__panel">
+          <form class="form" id="booking-form" action="#" method="post" novalidate>
+            <div class="form__grid">
+
+              <div class="field">
+                <label for="b-name">Ваше имя</label>
+                <input type="text" id="b-name" name="name" autocomplete="name" placeholder="Например, Алексей" required aria-describedby="b-name-error">
+                <p class="field__error" id="b-name-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="b-phone">Телефон</label>
+                <input type="tel" id="b-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7 900 000-00-00" required aria-describedby="b-phone-error">
+                <p class="field__error" id="b-phone-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="b-service">Услуга</label>
+                <select id="b-service" name="service" required aria-describedby="b-service-error">
+                  <option value="" selected disabled>Выберите услугу</option>
+                  <option value="Стрижка">Стрижка — от 1 600 ₽</option>
+                  <option value="Борода">Борода — от 1 800 ₽</option>
+                  <option value="Комплекс">Комплекс: стрижка и борода — 3 900 ₽</option>
+                </select>
+                <p class="field__error" id="b-service-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="b-master">Мастер</label>
+                <select id="b-master" name="master" required aria-describedby="b-master-error">
+                  <option value="" selected disabled>Выберите мастера</option>
+                  <option value="Любой свободный мастер">Любой свободный мастер</option>
+                  <option value="Артём">Артём</option>
+                  <option value="Даниил">Даниил</option>
+                  <option value="Максим">Максим</option>
+                  <option value="Илья">Илья</option>
+                </select>
+                <p class="field__error" id="b-master-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field field--full">
+                <label for="b-date">Дата</label>
+                <input type="date" id="b-date" name="date" required aria-describedby="b-date-error">
+                <p class="field__error" id="b-date-error" aria-live="polite"></p>
+              </div>
+
+              <fieldset class="field field--full times" aria-describedby="b-time-error">
+                <legend>Время</legend>
+                <p class="times__hint" id="b-time-hint">Сначала выберите дату</p>
+                <div class="times__list">
+                  <label class="time"><input type="radio" name="time" value="10:00" required><span>10:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="11:00"><span>11:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="12:00"><span>12:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="13:00"><span>13:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="14:00"><span>14:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="15:00"><span>15:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="16:00"><span>16:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="17:00"><span>17:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="18:00"><span>18:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="19:00"><span>19:00</span></label>
+                  <label class="time"><input type="radio" name="time" value="20:00"><span>20:00</span></label>
+                </div>
+                <p class="field__error" id="b-time-error" aria-live="polite"></p>
+              </fieldset>
+
+            </div>
+
+            <button class="btn form__submit" type="submit">Записаться</button>
+            <p class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+          </form>
+
+          <div class="success" id="booking-success" role="status" aria-live="polite" hidden tabindex="-1">
+            <div class="success__icon" aria-hidden="true">
+              <svg viewBox="0 0 52 52" width="64" height="64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <circle class="success__circle" cx="26" cy="26" r="23"/>
+                <path class="success__check" d="M15 27l8 8 14-16"/>
+              </svg>
+            </div>
+            <h3>Вы записаны</h3>
+            <p class="success__text" id="success-text"></p>
+            <dl class="success__details" id="success-details"></dl>
+            <button class="btn btn--ghost" type="button" id="booking-reset">Записаться ещё раз</button>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -284,6 +284,141 @@ ul, dl, dd, figure { margin: 0; padding: 0; list-style: none; }
   .container { padding: 0 18px; }
 }
 
+/* ===== Онлайн-запись ===== */
+:root { --error: #e07a68; }
+
+.section--booking { padding-top: 0; }
+.booking { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 72px; align-items: start; }
+.booking__intro .section__text { margin-bottom: 32px; }
+.booking__perks { display: grid; gap: 14px; }
+.booking__perks li { position: relative; padding-left: 28px; color: var(--text); }
+.booking__perks li::before {
+  content: "";
+  position: absolute; left: 2px; top: 0.62em;
+  width: 12px; height: 6px;
+  border-left: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+  transform: rotate(-45deg);
+}
+
+.booking__panel {
+  padding: 40px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+.booking__panel:hover,
+.booking__panel:focus-within { border-color: rgba(201, 165, 92, 0.55); box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3); }
+
+.form[hidden], .success[hidden] { display: none; }
+.form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 20px; margin-bottom: 30px; }
+.field { margin: 0; padding: 0; border: 0; min-width: 0; }
+.field--full { grid-column: 1 / -1; }
+.field label, .field legend { display: block; margin-bottom: 8px; padding: 0; font-size: 15px; color: var(--muted); }
+
+.field input[type="text"],
+.field input[type="tel"],
+.field input[type="date"],
+.field select {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--ease), box-shadow var(--ease), background var(--ease);
+}
+.field input::placeholder { color: #6f665a; }
+.field input:hover, .field select:hover { border-color: #5a4c34; }
+.field input:focus, .field select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 165, 92, 0.18);
+}
+.field input[type="date"] { color-scheme: dark; }
+.field select {
+  appearance: none; -webkit-appearance: none;
+  padding-right: 44px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23c9a55c' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+}
+.field select:invalid { color: #6f665a; }
+.field select option { background: var(--surface); color: var(--text); }
+
+/* Ошибки */
+.field input[aria-invalid="true"],
+.field select[aria-invalid="true"] { border-color: var(--error); }
+.field input[aria-invalid="true"]:focus,
+.field select[aria-invalid="true"]:focus { box-shadow: 0 0 0 3px rgba(224, 122, 104, 0.2); }
+.field__error { min-height: 0; margin: 6px 0 0; font-size: 14px; line-height: 1.35; color: var(--error); }
+.field__error:empty { display: none; }
+
+/* Выбор времени */
+.times__hint { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+.times__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 10px; }
+.time { position: relative; margin: 0; cursor: pointer; }
+.field .time { margin-bottom: 0; }
+.time input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.time span {
+  display: block;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--ease), background var(--ease), color var(--ease), transform var(--ease);
+}
+.time:hover input:not(:disabled) + span { border-color: var(--gold); color: var(--gold-light); transform: translateY(-2px); }
+.time input:checked + span { background: var(--gold); border-color: var(--gold); color: #1a150d; font-weight: 500; }
+.time input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 3px; }
+.time input:disabled { cursor: not-allowed; }
+.time input:disabled + span { opacity: 0.35; }
+.times.is-invalid .time span { border-color: var(--error); }
+
+/* Отправка */
+.form__submit { width: 100%; cursor: pointer; font-family: inherit; }
+.form__submit:disabled { opacity: 0.7; cursor: progress; transform: none; box-shadow: none; }
+.form__note { margin: 14px 0 0; font-size: 14px; color: var(--muted); text-align: center; }
+
+/* Успешная запись */
+.success { text-align: center; padding: 12px 0; outline: none; animation: success-in 0.6s ease both; }
+.success__icon { display: inline-flex; margin-bottom: 18px; color: var(--gold); }
+.success__circle { stroke-dasharray: 150; stroke-dashoffset: 150; animation: draw 0.7s ease 0.1s forwards; }
+.success__check { stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw 0.45s ease 0.65s forwards; }
+.success h3 { font-size: clamp(34px, 5vw, 44px); margin-bottom: 12px; }
+.success__text { max-width: 28em; margin: 0 auto 26px; color: var(--muted); }
+.success__details {
+  display: grid; gap: 0;
+  max-width: 420px; margin: 0 auto 30px;
+  text-align: left;
+  border-top: 1px solid var(--line);
+}
+.success__row { display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.success__row dt { color: var(--muted); }
+.success__row dd { margin: 0; text-align: right; color: var(--gold-light); font-weight: 400; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes success-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 960px) {
+  .booking { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 760px) {
+  .booking__panel { padding: 26px 20px; }
+  .form__grid { grid-template-columns: 1fr; gap: 20px; }
+  .times__list { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .success .btn { width: 100%; }
+}
+@media (max-width: 380px) {
+  .times__list { grid-template-columns: repeat(3, 1fr); }
+}
+
 /* ===== Уважение к настройке «меньше движения» ===== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
