@@ -1,112 +1,94 @@
-ENG: 
-
-Barber Studio
-
-Modern and responsive website for a barbershop, featuring an online booking interface.
-
-🌐Live Demo
-
-View Barber Studio
-
-📌About the Project
-
-Barber Studio is a website concept for a modern barbershop. The project focuses on clean design, usability and responsive layout.
-
-✨Features
-
-Modern and minimalist design
-
-Responsive layout
-
-Online booking form
-
-Service and barber selection
-
-Date and time selection
-
-Form validation
-
-Booking confirmation interface
-
-🛠Technologies
-
-HTML5
-
-CSS3
-
-JavaScript
-
-Git
-
-GitHub Pages
-
-🚀Deployment
-
-The website is hosted using GitHub Pages.
-
-📷 Preview
-
-Visit the live demo to explore the website.
-
-👨‍💻Author
-
-unithyy
-
-GitHub:@unithyy
-
 RUS:
 
-Barber Studio
+✂️Barber Studio
 
-Современный адаптивный веб-сайт для барбершопа с функцией онлайн-записи.
+Современный адаптивный сайт для премиального барбершопа.
 
-🌐Демо-версия
-
-Посмотреть Barber Studio
+\[🌐 Открыть сайт](https://unithyy.github.io/barber-studio/) · \[💻 GitHub Repository](https://github.com/unithyy/barber-studio)
 
 📌О проекте
 
-Barber Studio — это концепт веб-сайта для современного барбершопа. В проекте особое внимание уделено лаконичному дизайну, удобству использования и адаптивной верстке.
+Barber Studio — концептуальный сайт барбершопа с современным дизайном, удобной навигацией и демонстрационной системой онлайн-записи.
 
-✨Функционал
+Проект разработан для демонстрации навыков frontend-разработки.
 
-Современный минималистичный дизайн
+✨Возможности
 
-Адаптивная верстка
+\- Современный минималистичный дизайн.
 
-Форма онлайн-записи
+\- Адаптивная верстка для мобильных устройств.
 
-Выбор услуг и мастеров
+\- Каталог услуг и цен.
 
-Выбор даты и времени
+\- Галерея работ.
 
-Валидация полей формы
+\- Информация о мастерах и барбершопе.
 
-Интерфейс подтверждения записи
+\- Форма онлайн-записи.
+
+\- Выбор услуги и мастера.
+
+\- Выбор даты и времени.
+
+\- Подтверждение записи.
 
 🛠Технологии
 
-HTML5
+| Технология | Использование |
 
-CSS3
+|---|---|
 
-JavaScript
+| HTML5 | Структура сайта |
 
-Git
+| CSS3 | Стилизация и адаптивность |
 
-GitHub Pages
+| JavaScript | Интерактивность и логика формы |
 
-🚀Развертывание
+| Git | Контроль версий |
 
-Сайт размещен на платформе GitHub Pages.
+| GitHub Pages | Публикация сайта |
 
-📷Предварительный просмотр
+📷Структура проекта
 
-Перейдите по ссылке на демо-версию, чтобы ознакомиться с сайтом.
+barber-studio/
+
+│
+
+├── index.html
+
+├── README.md
+
+│
+
+└── css/
+
+&#x20;   └── style.css
+
+🚀Запуск проекта
+
+1\. Склонировать репозиторий:
+
+git clone https://github.com/unithyy/barber-studio.git
+
+2\. Перейти в папку проекта:
+
+cd barber-studio
+
+3\. Открыть `index.html` в браузере.
+
+🌐Деплой
+
+Проект опубликован с помощью GitHub Pages.
+
+Live Demo:https://unithyy.github.io/barber-studio/
+
+⚠️Примечание
+
+Проект является демонстрационным. Онлайн-запись работает на стороне браузера и пока не использует серверное сохранение заявок.
 
 👨‍💻Автор
 
 unithyy
 
-GitHub:@unithyy
+GitHub: https://github.com/unithyy
 
