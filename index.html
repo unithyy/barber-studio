@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barber Studio — премиальный барбершоп</title>
+  <meta name="description" content="Barber Studio: мужские стрижки, оформление бороды и бритьё опасной бритвой. Запись онлайн и по телефону.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#top">Barber Studio</a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">
+      <label for="menu-toggle" class="burger" aria-hidden="true"><span></span></label>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Работы</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+        <a class="btn btn--small" href="#contacts">Записаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Первый экран -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__lead">Мужские стрижки и уход за бородой</p>
+          <h1>Barber Studio</h1>
+          <p class="hero__sub">Точная стрижка, горячее полотенце и бритьё опасной бритвой. Без очередей — только по записи.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#contacts">Записаться на стрижку</a>
+            <a class="btn btn--ghost" href="#services">Смотреть цены</a>
+          </div>
+        </div>
+
+        <div class="pole" aria-hidden="true">
+          <div class="pole__cap"></div>
+          <div class="pole__glass"><div class="pole__stripes"></div></div>
+          <div class="pole__cap"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section__title">Услуги и цены</h2>
+        <p class="section__text">Стоимость указана за одного клиента. Мастер уточнит детали на консультации перед началом.</p>
+
+        <ul class="price-list">
+          <li class="price">
+            <div class="price__head"><h3>Мужская стрижка</h3><span class="price__dots"></span><span class="price__sum">2 500 ₽</span></div>
+            <p>Консультация, мытьё головы, стрижка ножницами или машинкой, укладка.</p>
+          </li>
+          <li class="price">
+            <div class="price__head"><h3>Стрижка машинкой</h3><span class="price__dots"></span><span class="price__sum">1 600 ₽</span></div>
+            <p>Одна или несколько насадок, окантовка, мытьё головы.</p>
+          </li>
+          <li class="price">
+            <div class="price__head"><h3>Моделирование бороды</h3><span class="price__dots"></span><span class="price__sum">1 800 ₽</span></div>
+            <p>Форма по типу лица, чёткие линии, уход маслом и бальзамом.</p>
+          </li>
+          <li class="price">
+            <div class="price__head"><h3>Королевское бритьё</h3><span class="price__dots"></span><span class="price__sum">2 200 ₽</span></div>
+            <p>Горячее полотенце, пена, опасная бритва, успокаивающий лосьон.</p>
+          </li>
+          <li class="price">
+            <div class="price__head"><h3>Стрижка и борода</h3><span class="price__dots"></span><span class="price__sum">3 900 ₽</span></div>
+            <p>Полный образ за один визит. Выгоднее, чем две услуги по отдельности.</p>
+          </li>
+          <li class="price">
+            <div class="price__head"><h3>Отец и сын</h3><span class="price__dots"></span><span class="price__sum">3 600 ₽</span></div>
+            <p>Две стрижки подряд. Для мальчиков до 12 лет.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Галерея -->
+    <section class="section section--alt" id="gallery">
+      <div class="container">
+        <h2 class="section__title">Наши работы</h2>
+        <p class="section__text">Классика, фейды и бороды. Замените эти блоки на свои фотографии, добавив тег img внутрь каждой карточки.</p>
+
+        <div class="gallery">
+          <figure class="shot shot--1 shot--wide"><figcaption>Классический пробор</figcaption></figure>
+          <figure class="shot shot--2"><figcaption>Скин-фейд</figcaption></figure>
+          <figure class="shot shot--3"><figcaption>Борода с чёткой линией</figcaption></figure>
+          <figure class="shot shot--4"><figcaption>Крафт-кроп</figcaption></figure>
+          <figure class="shot shot--5 shot--wide"><figcaption>Королевское бритьё</figcaption></figure>
+          <figure class="shot shot--6"><figcaption>Помпадур</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about__text">
+          <h2 class="section__title">О нас</h2>
+          <p>Barber Studio открылся в 2016 году с простой идеей: мужская стрижка должна быть точной, а визит — спокойным. Мы не торопим клиента и не делаем два дела одновременно.</p>
+          <p>В команде пять мастеров с опытом от шести лет. Каждый проходит обучение у европейских барберов и ежегодно подтверждает квалификацию.</p>
+          <p>Работаем с профессиональной косметикой, а инструмент стерилизуем после каждого клиента.</p>
+        </div>
+
+        <dl class="facts">
+          <div class="fact"><dt>10 лет</dt><dd>работаем в городе</dd></div>
+          <div class="fact"><dt>5 мастеров</dt><dd>с опытом от 6 лет</dd></div>
+          <div class="fact"><dt>12 000</dt><dd>выполненных стрижек</dd></div>
+          <div class="fact"><dt>4,9</dt><dd>средняя оценка гостей</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section section--alt" id="contacts">
+      <div class="container">
+        <h2 class="section__title">Контакты и запись</h2>
+        <p class="section__text">Позвоните или напишите в мессенджер. Подтвердим время в течение часа.</p>
+
+        <div class="contacts">
+          <div class="card">
+            <h3>Адрес</h3>
+            <p>ул. Примерная, 12<br>Центр, вход со двора</p>
+          </div>
+          <div class="card">
+            <h3>Часы работы</h3>
+            <p>Пн–Пт: 10:00–21:00<br>Сб–Вс: 11:00–20:00</p>
+          </div>
+          <div class="card">
+            <h3>Телефон</h3>
+            <p><a href="tel:+70000000000">+7 (000) 000-00-00</a><br><a href="mailto:hello@barberstudio.example">hello@barberstudio.example</a></p>
+          </div>
+        </div>
+
+        <div class="cta">
+          <h3>Готовы к новой стрижке?</h3>
+          <a class="btn" href="tel:+70000000000">Позвонить и записаться</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="logo" href="#top">Barber Studio</a>
+      <nav class="footer__nav" aria-label="Навигация в подвале">
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Работы</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <p class="footer__copy">© 2026 Barber Studio. Все права защищены.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
