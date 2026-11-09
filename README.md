@@ -4,10 +4,9 @@ RUS:
 
 Современный адаптивный сайт для премиального барбершопа.
 
-\[🌐 Открыть сайт](https://unithyy.github.io/barber-studio/) · \[💻 GitHub Repository](https://github.com/unithyy/barber-studio)
-
+🌐Открыть сайт(https://unithyy.github.io/barber-studio/)
+💻GitHub Repository(https://github.com/unithyy/barber-studio)
 📌О проекте
-
 Barber Studio — концептуальный сайт барбершопа с современным дизайном, удобной навигацией и демонстрационной системой онлайн-записи.
 
 Проект разработан для демонстрации навыков frontend-разработки.
@@ -31,38 +30,15 @@ Barber Studio — концептуальный сайт барбершопа с 
 \- Выбор даты и времени.
 
 \- Подтверждение записи.
-
-🛠Технологии
-
-| Технология | Использование |
-
-|---|---|
-
-| HTML5 | Структура сайта |
-
-| CSS3 | Стилизация и адаптивность |
-
-| JavaScript | Интерактивность и логика формы |
-
-| Git | Контроль версий |
-
-| GitHub Pages | Публикация сайта |
-
 📷Структура проекта
 
 barber-studio/
 
-│
+index.html
 
-├── index.html
+README.md
 
-├── README.md
-
-│
-
-└── css/
-
-&#x20;   └── style.css
+css/style.css
 
 🚀Запуск проекта
 
