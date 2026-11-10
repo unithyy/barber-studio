@@ -9,8 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" defer></script>
+  <script src="JAVA/animations.js" defer></script>
+  <script src="JAVA/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js" defer></script>
 </head>
+<div class="custom-cursor"></div>
+<div class="cursor-dot"></div>
 <body>
 
   <header class="header">
@@ -33,25 +38,40 @@
   <main id="top">
 
     <!-- Первый экран -->
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__text">
-          <p class="hero__lead">Мужские стрижки и уход за бородой</p>
-          <h1>Barber Studio</h1>
-          <p class="hero__sub">Точная стрижка, горячее полотенце и бритьё опасной бритвой. Без очередей — только по записи.</p>
-          <div class="hero__actions">
-            <a class="btn" href="#booking">Записаться на стрижку</a>
-            <a class="btn btn--ghost" href="#services">Смотреть цены</a>
-          </div>
-        </div>
+    
+<section class="hero">
+  <div class="hero__inner container">
+    <div class="hero__text">
+      <p class="hero__lead">EST. 2020 — PREMIUM BARBERSHOP</p>
 
-        <div class="pole" aria-hidden="true">
-          <div class="pole__cap"></div>
-          <div class="pole__glass"><div class="pole__stripes"></div></div>
-          <div class="pole__cap"></div>
-        </div>
+      <h1>
+        THE ART OF<br>
+        <span>GENTLEMAN.</span>
+      </h1>
+
+      <p class="hero__sub">
+        Искусство мужского стиля.
+        Точность каждой детали. Атмосфера,
+        в которую хочется возвращаться.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn" href="#booking">
+          ЗАПИСАТЬСЯ <span>↗</span>
+        </a>
+        <a class="btn btn--ghost" href="#services">
+          НАШИ УСЛУГИ
+        </a>
       </div>
-    </section>
+    </div>
+
+    <div class="hero__bottom">
+      <span>СТИЛЬ — ЭТО ХАРАКТЕР</span>
+      <span>SCROLL TO EXPLORE ↓</span>
+    </div>
+  </div>
+</section>
+
 
     <!-- Услуги -->
     <section class="section" id="services">
@@ -92,7 +112,7 @@
     <section class="section section--alt" id="gallery">
       <div class="container">
         <h2 class="section__title">Наши работы</h2>
-        <p class="section__text">Классика, фейды и бороды. <!--Замените эти блоки на свои фотографии, добавив тег img внутрь каждой карточки.--></p>
+        <p class="section__text">Классика, фейды и бороды.</p>
 
         <div class="gallery">
           <figure class="shot shot--1 shot--wide"><figcaption>Классический пробор</figcaption></figure>
@@ -129,7 +149,7 @@
       <div class="container booking">
         <div class="booking__intro">
           <h2 class="section__title">Онлайн-запись</h2>
-          <p class="section__text">Выберите услугу, мастера и удобное время. Мы подтвердим запись по телефону в течение часа.</p>
+          <p class="section__text">Выберите услугу, мастера и удобное время. Это демонстрационная форма: заявка никуда не отправляется.</p>
           <ul class="booking__perks">
             <li>Без предоплаты</li>
             <li>Бесплатная отмена за 3 часа до визита</li>
@@ -157,9 +177,9 @@
                 <label for="b-service">Услуга</label>
                 <select id="b-service" name="service" required aria-describedby="b-service-error">
                   <option value="" selected disabled>Выберите услугу</option>
-                  <option value="Стрижка">Стрижка — от 1 600 ₽</option>
-                  <option value="Борода">Борода — от 1 800 ₽</option>
-                  <option value="Комплекс">Комплекс: стрижка и борода — 3 900 ₽</option>
+                  <option value="Стрижка" data-price="1600" data-from>Стрижка — от 1 600 ₽</option>
+                  <option value="Борода" data-price="1800" data-from>Борода — от 1 800 ₽</option>
+                  <option value="Комплекс" data-price="3900">Комплекс: стрижка и борода — 3 900 ₽</option>
                 </select>
                 <p class="field__error" id="b-service-error" aria-live="polite"></p>
               </div>
@@ -186,26 +206,20 @@
               <fieldset class="field field--full times" aria-describedby="b-time-error">
                 <legend>Время</legend>
                 <p class="times__hint" id="b-time-hint">Сначала выберите дату</p>
-                <div class="times__list">
-                  <label class="time"><input type="radio" name="time" value="10:00" required><span>10:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="11:00"><span>11:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="12:00"><span>12:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="13:00"><span>13:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="14:00"><span>14:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="15:00"><span>15:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="16:00"><span>16:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="17:00"><span>17:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="18:00"><span>18:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="19:00"><span>19:00</span></label>
-                  <label class="time"><input type="radio" name="time" value="20:00"><span>20:00</span></label>
-                </div>
+                <div class="times__list" id="b-time-list"></div>
                 <p class="field__error" id="b-time-error" aria-live="polite"></p>
               </fieldset>
 
             </div>
 
+            <section class="preview" aria-labelledby="preview-title">
+              <h3 id="preview-title">Ваша запись</h3>
+              <dl class="success__details" id="preview-details"></dl>
+              <p class="preview__note">Стоимость предварительная, итог уточняет мастер.</p>
+            </section>
+
             <button class="btn form__submit" type="submit">Записаться</button>
-            <p class="form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+            <p class="form__note">Демо-режим: данные не отправляются на сервер, занятость мастеров не проверяется.</p>
           </form>
 
           <div class="success" id="booking-success" role="status" aria-live="polite" hidden tabindex="-1">
@@ -215,7 +229,7 @@
                 <path class="success__check" d="M15 27l8 8 14-16"/>
               </svg>
             </div>
-            <h3>Вы записаны</h3>
+            <h3>Запись оформлена</h3>
             <p class="success__text" id="success-text"></p>
             <dl class="success__details" id="success-details"></dl>
             <button class="btn btn--ghost" type="button" id="booking-reset">Записаться ещё раз</button>
@@ -266,6 +280,18 @@
       <p class="footer__copy">© 2026 Barber Studio. Все права защищены.</p>
     </div>
   </footer>
+
+  <dialog class="modal" id="confirm-modal" aria-labelledby="modal-title" aria-describedby="modal-desc">
+    <div class="modal__box">
+      <h3 id="modal-title">Проверьте запись</h3>
+      <p class="modal__text" id="modal-desc">Убедитесь, что всё указано верно. Это демонстрация: заявка не будет отправлена на сервер.</p>
+      <dl class="success__details" id="modal-details"></dl>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" type="button" id="modal-cancel">Изменить</button>
+        <button class="btn" type="button" id="modal-confirm">Подтвердить запись</button>
+      </div>
+    </div>
+  </dialog>
 
 </body>
 </html>
